@@ -1,2 +1,2 @@
-# taurus
+Taurus
 Docker image to run taurus
