@@ -9,5 +9,5 @@ COPY . /scripts
 
 WORKDIR /scripts
 
-CMD ["bzt" , "quick_test.yml"]
+CMD ["bzt" , "quick_test.yml", "-o", "modules.console.disable=true", "-report", "-o", "modules.blazemeter.browser-open=none"]
 

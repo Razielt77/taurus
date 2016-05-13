@@ -8,5 +8,8 @@ execution:
 scenarios:
   quick-test:
     requests:
-      - http://blazedemo.com
+      - http://aut:5000
+
+reporting:
+- final_stats
     
