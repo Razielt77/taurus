@@ -8,7 +8,7 @@ execution:
 scenarios:
   quick-test:
     requests:
-      - http://aut:5000/login
+      - http://integration_aut_1:5000/login
 
 reporting:
 - final_stats
