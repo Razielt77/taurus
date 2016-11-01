@@ -9,5 +9,5 @@ COPY . /scripts
 
 WORKDIR /scripts
 
-CMD ["bzt" , "quick_test.yml", "-report"]
+CMD ["bzt" , "letschat.yml", "-report"]
 
