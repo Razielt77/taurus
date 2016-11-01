@@ -5,7 +5,7 @@ execution:
   scenario: Thread Group
 scenarios:
   Thread Group:
-    default-address: http://aws-big:5000
+    default-address: http://integration_aut_1:5000/login
     data-sources:
     - accounts.csv
     requests:
