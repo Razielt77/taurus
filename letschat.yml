@@ -1,7 +1,7 @@
 ---
 execution:
-- concurrency: 3
-  iterations: 3
+- concurrency: 20
+  iterations: 200
   scenario: Thread Group
 scenarios:
   Thread Group:
