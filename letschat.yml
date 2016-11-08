@@ -5,7 +5,7 @@ execution:
   scenario: Thread Group
 scenarios:
   Thread Group:
-    default-address: http://integration_aut_1:5000/login
+    default-address: http://aut:5000/login
     data-sources:
     - accounts.csv
     requests:
