@@ -62,8 +62,10 @@ reporting:
 - final_stats
 
 modules:
+  cloud:
+    test: letschat
+    project: codefresh_demo
   blazemeter:
     browser-open: none
-    token: cba249c64d8bc461951d
   console:
     disable: true
