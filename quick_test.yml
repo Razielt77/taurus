@@ -8,7 +8,7 @@ execution:
 scenarios:
   quick-test:
     requests:
-      - http://integration_aut_1:5000/login
+      - http://demochat:5000/login
 
 reporting:
 - final_stats
@@ -18,4 +18,5 @@ modules:
     browser-open: none
     token: cba249c64d8bc461951d
   console:
-    disable: true    
+    disable: true 
+    
