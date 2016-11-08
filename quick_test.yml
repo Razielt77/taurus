@@ -18,4 +18,5 @@ modules:
     browser-open: none
     token: cba249c64d8bc461951d
   console:
-    disable: true    
+    disable: true 
+    
