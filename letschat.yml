@@ -1,7 +1,7 @@
 ---
 execution:
 - concurrency: 20
-  iterations: 10
+  iterations: 1
   scenario: Thread Group
 scenarios:
   Thread Group:
@@ -59,7 +59,11 @@ scenarios:
     store-cookie: true
     use-dns-cache-mgr: false
 reporting:
-- final_stats
+- module: final-stats
+  summary: true  # overall samples count and percent of failures
+  percentiles: false  # display average times and percentiles
+  failed-labels: false  # provides list of sample labels with failures
+  test-duration: false  # provides test duration
 
 modules:
   cloud:
