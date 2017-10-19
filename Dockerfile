@@ -5,9 +5,15 @@ RUN apt-get install -y python default-jre-headless python-tk python-pip python-d
 RUN pip install bzt
 RUN pip install --upgrade bzt
 
+COPY ./init.yml /scripts/init.yml
+
+RUN bzt scripts/init.yml -report
+
 COPY . /scripts
 
 WORKDIR /scripts
+
+
 
 CMD ["bzt" , "letschat.yml", "-report"]
 
