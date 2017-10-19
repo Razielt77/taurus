@@ -1,3 +1,4 @@
+echo TOKEN=$TOKEN
 bzt letschat.yml -report -o modules.blazemeter.token=$TOKEN -o modules.blazemeter.test=letschat |& tee result.txt
 export PER_LINK=$(cat result.txt | grep Online | grep -o "https://.*")
 echo PER_LINK=$PER_LINK
