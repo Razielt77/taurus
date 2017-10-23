@@ -1,7 +1,7 @@
 echo TOKEN=$TOKEN
 echo CF_VOLUME_PATH=$CF_VOLUME_PATH
-# bzt letschat.yml -report -o modules.blazemeter.token=$TOKEN -o modules.blazemeter.test=letschat |& tee result.txt
-# export PER_LINK=$(cat result.txt | grep Online | grep -o "https://.*")
-PER_LINK=www.google.com
+bzt letschat.yml -report -o modules.blazemeter.token=$TOKEN -o modules.blazemeter.test=letschat |& tee result.txt
+export PER_LINK=$(cat result.txt | grep Online | grep -o "https://.*")
+#PER_LINK=www.google.com
 echo PER_LINK=$PER_LINK
 echo PER_LINK=$PER_LINK >> $CF_VOLUME_PATH/env_vars_to_exportexit
