@@ -4,4 +4,4 @@ bzt letschat.yml -report -o modules.blazemeter.token=$TOKEN -o modules.blazemete
 export PER_LINK=$(cat result.txt | grep Online | grep -o "https://.*")
 #PER_LINK=www.google.com
 echo PER_LINK=$PER_LINK
-echo PER_LINK=$PER_LINK >> $CF_VOLUME_PATH/env_vars_to_exportexit
+echo PER_LINK=$PER_LINK >> $CF_VOLUME_PATH/env_vars_to_export
