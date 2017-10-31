@@ -1,0 +1,75 @@
+---
+execution:
+- concurrency: 5
+  iterations: 1
+  scenario: Thread Group
+scenarios:
+  Thread Group:
+    default-address: http://aut:5000/login
+    data-sources:
+    - accounts.csv
+    requests:
+    - body:
+        display-name: ${account}
+        email: ${email}
+        first-name: ${fname}
+        last-name: ${lname}
+        password: ${password}
+        password-confirm: ${password}
+        username: ${account}
+      label: register
+      method: POST
+      url: /account/register
+
+    - label: login
+      body:
+        password: ${password}
+        username: ${account}
+      method: POST
+      url: /account/login
+    - label: emotes
+      method: GET
+      url: /extras/emotes
+    - label: replacements
+      method: GET
+      url: /extras/replacements
+    - label: chat
+      method: GET
+      url: /socket.io/?EIO=3&transport=polling&t=1477932100202-0
+      extract-regexp:
+        sid:
+          default: NO_MATCH
+          match-no: 1
+          regexp: '"sid":"(.+)","'
+          template: $1$
+    - label: chat session
+      method: GET
+      url: /socket.io/?EIO=3&transport=polling&t=1477932100505-1&sid=${sid}
+    - label: chat session
+      body: 21:420["account:whoami"]
+      method: POST
+      url: /socket.io/?EIO=3&transport=polling&t=1477932100655-2&sid=${sid}
+    - label: chat session
+      method: GET
+      url: /socket.io/?EIO=3&transport=polling&t=1477932100711-3&sid=${sid}
+    - label: logout
+      method: GET
+      url: /logout
+    store-cache: true
+    store-cookie: true
+    use-dns-cache-mgr: false
+reporting:
+- module: final-stats
+  summary: true  # overall samples count and percent of failures
+  percentiles: false  # display average times and percentiles
+  failed-labels: false  # provides list of sample labels with failures
+  test-duration: false  # provides test duration
+
+modules:
+  cloud:
+    test: letschat
+    project: codefresh_demo
+  blazemeter:
+    browser-open: none
+  console:
+    disable: true
