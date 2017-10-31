@@ -7,7 +7,7 @@ scenarios:
   Thread Group:
     default-address: http://aut:5000/login
     data-sources:
-    - accounts.csv
+    - accounts_short.csv
     requests:
     - body:
         display-name: ${account}
